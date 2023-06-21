@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selecionando Elementos #01</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="conteudo exercicios">
+    <!--Exemplos de Uso da chamadas do IDs e classes e tabNames -->
+    <div id="primeiro">#primeiro</div>
+
+    <div>segundo</div>
+
+    <div class="terceiro ultimo">.terceiro .ultimo</div>
+
+
+    <script>
+        document.getElementById('primeiro').classList.add('destaque')
+
+        //Using by Tag Name  transformando o HTML colections..
+        const divs = document.getElementsByTagName('div')
+        // Transformando em um Array.from()
+        Array.from(divs).forEach(e => e.classList.remove('destaque'))
+
+        //Outra Maneira de transformar o HTML Colections em Array. use Operador Spread.
+
+        const divsArray = [...divs]
+        divsArray.forEach(e => e.classList.add('destaque'))
+
+        //
+        const ultimosElementos = document.getElementsByClassName('ultimo')
+        for(let e of ultimosElementos){
+            e.classList.remove('destaque')
+        }
+    </script>
+</body>
+</html>
